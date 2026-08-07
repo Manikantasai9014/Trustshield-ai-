@@ -33,10 +33,15 @@ const MainLayout: React.FC = () => {
             <div className="intro-ambient ambient-b" />
             <div className="intro-ambient ambient-c" />
             <div className="scene-3d intro-scene">
+              <div className="scene-glow" />
               <div className="orb-3d intro-orb" />
               <div className="intro-sheen" />
+              <div className="orbit orbit-a" />
+              <div className="orbit orbit-b" />
+              <div className="orbit orbit-c" />
               <div className="trustshield-logo-wrapper">
                 <div className="trustshield-ring" />
+                <div className="trustshield-ring-inner" />
                 <div className="trustshield-badge">
                   <div className="trustshield-shield">
                     <span>TS</span>
@@ -50,13 +55,13 @@ const MainLayout: React.FC = () => {
             <div className="mt-6 text-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.35em] text-blue-200">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-                TrustShield AI
+                TrustShield
               </div>
-              <h1 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                A new standard in intelligent trust
+              <h1 className="mt-3 text-2xl font-semibold tracking-[0.02em] text-white sm:text-3xl">
+                Intelligent trust, redefined
               </h1>
               <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-400">
-                Orchestrating fraud defense, authenticity verification, and review intelligence in one elegant operating layer.
+                Orchestrating fraud defense, authenticity verification, and review intelligence through one fluid, premium experience.
               </p>
               <div className="intro-progress mt-5">
                 <span />
