@@ -28,8 +28,13 @@ const MainLayout: React.FC = () => {
       {showIntro && (
         <div className="app-intro-overlay">
           <div className="app-intro-card">
+            <div className="intro-grid-overlay" />
+            <div className="intro-ambient ambient-a" />
+            <div className="intro-ambient ambient-b" />
+            <div className="intro-ambient ambient-c" />
             <div className="scene-3d intro-scene">
               <div className="orb-3d intro-orb" />
+              <div className="intro-sheen" />
               <div className="trustshield-logo-wrapper">
                 <div className="trustshield-ring" />
                 <div className="trustshield-badge">
@@ -48,11 +53,14 @@ const MainLayout: React.FC = () => {
                 TrustShield AI
               </div>
               <h1 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                Launching secure intelligence
+                A new standard in intelligent trust
               </h1>
               <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-400">
-                Synchronizing multi-agent fraud defense, authenticity verification, and review moderation systems.
+                Orchestrating fraud defense, authenticity verification, and review intelligence in one elegant operating layer.
               </p>
+              <div className="intro-progress mt-5">
+                <span />
+              </div>
             </div>
           </div>
         </div>
