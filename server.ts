@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import path from "path";
+import dotenv from "dotenv";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import { SAMPLE_CASES } from "./src/data/sampleCases";
@@ -16,6 +17,8 @@ import {
   EmailAlertConfig,
   MockEmailAlert
 } from "./src/types";
+
+dotenv.config();
 
 const app = express();
 app.use(express.json({ limit: "10mb" }));
