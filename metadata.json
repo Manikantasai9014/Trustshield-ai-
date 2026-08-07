@@ -1,0 +1,6 @@
+{
+  "name": "TrustShield AI",
+  "description": "Multi-Agent Trust & Safety Platform for E-Commerce detecting transaction fraud, counterfeit listings, and fake reviews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
