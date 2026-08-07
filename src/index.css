@@ -102,3 +102,86 @@ html.light textarea {
 html.light .fixed.inset-0.bg-slate-950\/80 {
   background-color: rgba(15, 23, 42, 0.5) !important;
 }
+
+.scene-3d {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  animation: floatScene 6s ease-in-out infinite;
+}
+
+.orb-3d {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 25% 25%, #f8fafc 0%, #60a5fa 28%, #2563eb 58%, #0f172a 100%);
+  box-shadow: 0 0 80px rgba(59, 130, 246, 0.45);
+  transform: rotateX(20deg) rotateY(-20deg);
+  animation: pulseGlow 3.6s ease-in-out infinite;
+}
+
+.panel-3d {
+  position: absolute;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.8));
+  box-shadow: 0 18px 45px rgba(2, 8, 23, 0.35);
+}
+
+.panel-a {
+  width: 120px;
+  height: 84px;
+  top: 26px;
+  left: 32px;
+  transform: rotate(-16deg) translateZ(24px);
+  animation: driftOne 5.2s ease-in-out infinite;
+}
+
+.panel-b {
+  width: 102px;
+  height: 102px;
+  right: 34px;
+  bottom: 28px;
+  transform: rotate(20deg) translateZ(10px);
+  animation: driftTwo 4.8s ease-in-out infinite;
+}
+
+.panel-c {
+  width: 92px;
+  height: 74px;
+  bottom: 44px;
+  left: 54px;
+  transform: rotate(12deg) translateZ(18px);
+  animation: driftThree 5.6s ease-in-out infinite;
+}
+
+@keyframes floatScene {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: rotateX(20deg) rotateY(-20deg) scale(1); }
+  50% { transform: rotateX(20deg) rotateY(-20deg) scale(1.04); }
+}
+
+@keyframes driftOne {
+  0%, 100% { transform: rotate(-16deg) translateZ(24px) translateY(0px); }
+  50% { transform: rotate(-16deg) translateZ(24px) translateY(-8px); }
+}
+
+@keyframes driftTwo {
+  0%, 100% { transform: rotate(20deg) translateZ(10px) translateY(0px); }
+  50% { transform: rotate(20deg) translateZ(10px) translateY(-9px); }
+}
+
+@keyframes driftThree {
+  0%, 100% { transform: rotate(12deg) translateZ(18px) translateY(0px); }
+  50% { transform: rotate(12deg) translateZ(18px) translateY(-6px); }
+}

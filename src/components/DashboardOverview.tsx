@@ -118,6 +118,48 @@ export const DashboardOverview: React.FC = () => {
         </div>
       </div>
 
+      {/* 3D Animated Hero Panel */}
+      <div className="relative overflow-hidden rounded-[28px] border border-slate-800/80 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950/80 p-6 shadow-2xl shadow-blue-950/20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.22),_transparent_40%),radial-gradient(circle_at_bottom_right,_rgba(16,185,129,0.2),_transparent_35%)]" />
+        <div className="relative grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-blue-300">
+              <Sparkles className="w-3.5 h-3.5" />
+              Immersive Defense Layer
+            </div>
+            <h2 className="mt-4 text-2xl font-semibold text-white sm:text-3xl">
+              A cinematic view of every fraud signal, fused in real time.
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-slate-400 sm:text-base">
+              TrustShield AI now renders a live 3D-style security scene that makes the network feel alive while every agent evaluates risk, authenticity, and review integrity.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <button
+                onClick={() => setActiveTab('evaluator')}
+                className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-500"
+              >
+                Run Live Analysis
+              </button>
+              <button
+                onClick={() => setActiveTab('risk_agent')}
+                className="rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-slate-500 hover:text-white"
+              >
+                Explore Risk Signals
+              </button>
+            </div>
+          </div>
+
+          <div className="relative mx-auto flex min-h-[260px] w-full max-w-[360px] items-center justify-center">
+            <div className="scene-3d">
+              <div className="orb-3d" />
+              <div className="panel-3d panel-a" />
+              <div className="panel-3d panel-b" />
+              <div className="panel-3d panel-c" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Metric Cards Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
