@@ -160,14 +160,16 @@ export const LiveEvaluator: React.FC = () => {
       setFormData({
         transaction: {
           amount: selectedAmazonProduct.amazonPrice,
+          currency: 'USD',
           paymentMethod: 'Credit Card',
-          userAccountAgeDays: 120,
+          deviceType: 'Desktop Browser',
+          ipAddress: '72.14.201.1',
+          isVpnOrProxy: false,
+          customerAgeDays: 120,
           totalPastOrders: 15,
           pastReturnsCount: selectedAmazonProduct.authenticityRisk === 'High' ? 4 : 1,
-          isVpnOrProxy: false,
-          velocity24h: 1,
-          ipCountry: 'US',
-          shippingCountry: 'US'
+          pastChargebacksCount: 0,
+          velocity24h: 1
         },
         listing: {
           title: selectedAmazonProduct.title,
@@ -246,14 +248,16 @@ export const LiveEvaluator: React.FC = () => {
     setFormData({
       transaction: {
         amount: product.amazonPrice,
+        currency: 'USD',
         paymentMethod: 'Credit Card',
-        userAccountAgeDays: 120,
+        deviceType: 'Desktop Browser',
+        ipAddress: '72.14.201.1',
+        isVpnOrProxy: false,
+        customerAgeDays: 120,
         totalPastOrders: 15,
         pastReturnsCount: product.authenticityRisk === 'High' ? 4 : 1,
-        isVpnOrProxy: false,
-        velocity24h: 1,
-        ipCountry: 'US',
-        shippingCountry: 'US'
+        pastChargebacksCount: 0,
+        velocity24h: 1
       },
       listing: {
         title: product.title,

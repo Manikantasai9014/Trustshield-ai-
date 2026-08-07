@@ -43,14 +43,15 @@ const MainLayout: React.FC = () => {
               <div className="panel-3d panel-c intro-panel-c" />
             </div>
             <div className="mt-6 text-center">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-blue-300">
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.35em] text-blue-200">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
                 TrustShield AI
-              </p>
-              <h1 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">
+              </div>
+              <h1 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
                 Launching secure intelligence
               </h1>
-              <p className="mt-2 text-sm text-slate-400">
-                Initializing fraud, authenticity, and review agents…
+              <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-400">
+                Synchronizing multi-agent fraud defense, authenticity verification, and review moderation systems.
               </p>
             </div>
           </div>

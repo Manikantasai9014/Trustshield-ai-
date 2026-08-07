@@ -108,7 +108,7 @@ export const RiskHeatmap: React.FC<RiskHeatmapProps> = ({ cases }) => {
 
     // Process live cases
     cases.forEach(c => {
-      const date = new Date(c.timestamp);
+      const date = new Date(c.createdAt);
       const dayIndex = (date.getDay() + 6) % 7; // Convert Sun=0 to Mon=0...Sun=6
       const dayName = DAYS[dayIndex] || 'Mon';
       const hour = date.getHours();
@@ -126,9 +126,6 @@ export const RiskHeatmap: React.FC<RiskHeatmapProps> = ({ cases }) => {
           grid[dayName][slotId].count += 1;
           grid[dayName][slotId].liveAdded += 1;
           grid[dayName][slotId].avgScore = Math.round((grid[dayName][slotId].avgScore + c.decision.overallRiskScore) / 2);
-          if (c.decision.primaryRiskFactor) {
-            grid[dayName][slotId].mainRisk = c.decision.primaryRiskFactor;
-          }
         }
       }
     });

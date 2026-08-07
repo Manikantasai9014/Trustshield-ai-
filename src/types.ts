@@ -113,6 +113,7 @@ export interface DecisionEngineResult {
   };
   recommendedActions: string[];
   policyTriggers: string[];
+  primaryRiskFactor?: string;
 }
 
 export interface AuditCase {

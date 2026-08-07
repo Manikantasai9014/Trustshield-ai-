@@ -202,7 +202,7 @@ export const SAMPLE_CASES: AuditCase[] = [
       }
     },
     decision: {
-      overallRiskScore: 35 + 20, // 55 total risk score
+      overallRiskScore: 35,
       decision: "Manual Review",
       decisionColor: "yellow",
       summaryReasoning: "Overall risk score is 35 (Manual Review Zone: 41-70). While transaction risk (22) and review quality (18) are low, the product listing authenticity agent raised a 68 risk score due to logo deviation and low resale price.",
