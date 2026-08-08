@@ -458,7 +458,7 @@ Return JSON matching this exact structure:
 }`;
 
         const response = await ai.models.generateContent({
-          model: "gemini-3.6-flash",
+          model: "gemini-2.5-flash",
           contents: prompt,
           config: {
             responseMimeType: "application/json"
@@ -605,7 +605,7 @@ Return JSON matching:
 }`;
 
           const response = await ai.models.generateContent({
-            model: "gemini-3.6-flash",
+            model: "gemini-2.5-flash",
             contents: prompt,
             config: { responseMimeType: "application/json" }
           });
@@ -994,7 +994,7 @@ app.get("/api/cases/export", (req: Request, res: Response) => {
 
 // Vite Development or Production Server
 async function startServer() {
-  const PORT = 3000;
+  const initialPort = Number(process.env.PORT) || 3000;
 
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
@@ -1010,9 +1010,27 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`TrustShield AI Server running on http://localhost:${PORT}`);
-  });
+  function listenOnPort(port: number) {
+    const server = app.listen(port, "0.0.0.0", () => {
+      console.log(`TrustShield AI Server running on http://localhost:${port}`);
+    });
+
+    server.on("error", (err: any) => {
+      if (err.code === "EADDRINUSE") {
+        console.warn(`Port ${port} is currently in use. Trying port ${port + 1}...`);
+        listenOnPort(port + 1);
+      } else {
+        console.error("Server startup error:", err);
+      }
+    });
+  }
+
+  listenOnPort(initialPort);
 }
 
-startServer();
+export default app;
+
+if (!process.env.VERCEL) {
+  startServer();
+}
+
